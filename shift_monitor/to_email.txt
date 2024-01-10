@@ -1,0 +1,6 @@
+Shift change!
+Your schedule was altered!
+Your shift on Januari 14 (S) was changed from S1 to S3.
+
+Current file:XLS_backup_1601_Mon_08_01_2024_1704727801.xlsx
+Old file:XLS_backup_1501_Mon_08_01_2024_1704724201.xlsx
