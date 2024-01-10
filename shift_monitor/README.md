@@ -2,7 +2,7 @@
 
 The script shiftupdate_funct_4modifnames.sh monitors and logs the changes in a Google Docs shift schedule spreadsheet, which is formatted in the way shown in XLS_backup_backup_1101_Tue_09_01_2024_1704796201.xlsx. If changes are detected or a new chedule is added, or there is a data extraction error, it sends a notification to an email given in shift_change.sh. The script is run hourly by cron.
 
-**How it works: **
+**How it works**
 - The primary script for data extraction and comparison is shiftupdate_funct_4modifnames.sh. When run, it returns to_email.txt file, which is then checked by the secondary shift_change.sh for triggers that lead to an email notification being sent.
 - When first started, the primary shiftupdate_funct_4modifnames.sh script downloads the .xlsx and the corresponding .csv files, which are formated as shown in this folder.
 - It proceeds to changing the CSV delimiter from a comma to a pipe ("|") as some cells may have a comma in the contents, which will intefere with parsing the spreadsheet into a series of arrays.
@@ -18,3 +18,4 @@ The script shiftupdate_funct_4modifnames.sh monitors and logs the changes in a G
 **How to run the script:**
   - In order to run, the script requires csvkit (https://csvkit.readthedocs.io) and mailutils (see installation instructions at https://linuxsimply.com/bash-scripting-tutorial/basics/examples/send-email/).
   - shift_change.sh needs to be run. It contains the command for starting the primary shiftupdate_funct_4modifnames.sh as well as it checks its output in to_email.txt and sends an email if necessary.
+  - Do not forget to cd to your script folder in the cron command field!
