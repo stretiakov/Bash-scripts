@@ -1,3 +1,5 @@
+# the script requires installed mailx (https://linuxsimply.com/bash-scripting-tutorial/basics/examples/send-email/)
+
 #!/usr/bin/bash
 
 # changing to chosen working directory so that all relative paths work correctly
