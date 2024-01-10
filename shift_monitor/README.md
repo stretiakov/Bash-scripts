@@ -1,6 +1,6 @@
 **Shift monitor script**
 
-The script shiftupdate_funct_4modifnames.sh monitors and logs the changes in a Google Docs shift schedule spreadsheet, which is formatted in the way shown in XLS_backup_backup_1101_Tue_09_01_2024_1704796201.xlsx. If changes are detected or a new chedule is added, or there is a data extraction error, it sends a notification to an email given in shift_change.sh. The script is run hourly by cron.
+The script shiftupdate_funct_4modifnames.sh monitors and logs changes in a Google Docs shift schedule spreadsheet, which is formatted in the way shown in XLS_backup_backup_1101_Tue_09_01_2024_1704796201.xlsx. If changes are detected or a new chedule is added, or there is a data extraction error, it sends a notification to an email given in shift_change.sh. The script is run hourly by cron.
 
 
 **How it works**
