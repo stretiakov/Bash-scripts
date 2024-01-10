@@ -19,5 +19,5 @@ The script shiftupdate_funct_4modifnames.sh monitors and logs the changes in a G
 
 **How to run the script:**
   - In order to run, the script requires csvkit (https://csvkit.readthedocs.io) and mailutils (see installation instructions at https://linuxsimply.com/bash-scripting-tutorial/basics/examples/send-email/).
-  - shift_change.sh needs to be run. It contains the command for starting the primary shiftupdate_funct_4modifnames.sh as well as it checks its output in to_email.txt and sends an email if necessary.
+  - Only shift_change.sh needs to be run. It contains a command for starting the primary shiftupdate_funct_4modifnames.sh as well as it checks its output in to_email.txt and sends an email if necessary.
   - Do not forget to cd to your script folder in the cron command field!
