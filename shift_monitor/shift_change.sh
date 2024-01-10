@@ -1,4 +1,4 @@
-# the script requires installed mailx (https://linuxsimply.com/bash-scripting-tutorial/basics/examples/send-email/)
+# the script requires installed mailutils (https://linuxsimply.com/bash-scripting-tutorial/basics/examples/send-email/)
 
 #!/usr/bin/bash
 
