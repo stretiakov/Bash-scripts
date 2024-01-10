@@ -9,7 +9,7 @@ cd /home/str/shifts_script/actual_script
 # running the script
 ./shiftupdate_funct_4modifnames.sh
 
-recepient="stretiani@gmail.com"
+recepient="xxx@email.com"
 subject="$(head -1 to_email.txt)"
 body="$(cat to_email.txt)"
 curr_xls="$(pwd)/$(tail -2 to_email.txt | head -1 | cut -d ':' -f2)"
