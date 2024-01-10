@@ -40,13 +40,6 @@ csvformat -D "$CSV_delim" $new_filename_commas > $new_filename
 # appending a core of the name of downloaded file to the log
 echo $date_for_name >> backup.log 
 
-# keeping the length of backup.log to 500 lines maximum
-if (( $(wc -l backup.log | cut -d ' ' -f1) > 500 ))
-then
-	tail -500 backup.log > temp.log
-	mv temp.log backup.log
-fi
-
 # delete backups that are older than a week
 for file in $(ls *.csv *.xlsx); do
 	when_modified=$(date -r $file +%s)
@@ -55,6 +48,13 @@ for file in $(ls *.csv *.xlsx); do
 		rm $file
 	fi
 done
+
+# keeping the length of backup.log to 500 lines maximum
+if (( $(wc -l backup.log | cut -d ' ' -f1) > 500 ))
+then
+	tail -500 backup.log > temp.log
+	mv temp.log backup.log
+fi
 
 # sourcing the previous backup CSV from the penultimate line of the log
 old_filename="CSV_backup_$(tail -2 < backup.log | head -1).csv"
