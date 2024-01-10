@@ -37,9 +37,6 @@ wget -q -O $XLS_filename "https://docs.google.com/spreadsheets/d/GOOGLE_DOC_ID/e
 # replacing the delimiter for $CSV_delim
 csvformat -D "$CSV_delim" $new_filename_commas > $new_filename    
 
-# appending a core of the name of downloaded file to the log
-echo $date_for_name >> backup.log 
-
 # delete backups that are older than a week
 for file in $(ls *.csv *.xlsx); do
 	when_modified=$(date -r $file +%s)
@@ -48,6 +45,9 @@ for file in $(ls *.csv *.xlsx); do
 		rm $file
 	fi
 done
+
+# appending a core of the name of downloaded file to the log
+echo $date_for_name >> backup.log 
 
 # keeping the length of backup.log to 500 lines maximum
 if (( $(wc -l backup.log | cut -d ' ' -f1) > 500 ))
