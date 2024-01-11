@@ -94,7 +94,6 @@ extracted_data() {
 		if (( $(( name_arr[$i]-loc_arr[$i] )) <= 12 ))
 		then 
 			month_days_line=$(head -$(( loc_arr[$i]+1 )) ${!filename} | tail -1)
-			# echo $month_days_line
 			month=$(echo $month_days_line | awk -F"$CSV_delim" '{print $1}')
 			IFS=$CSV_delim read -r -d '' -a ${ver}_month_days_arr_$month <<< "$month_days_line"
 
