@@ -1,0 +1,13 @@
+  ##  isocage_311.log  ##  
+ - FROM INPUT: - 
+requested: freq opt
+functional/basisset: b3lyp 6-311++G**
+ - RESULTS: - 
+point_group = C3V
+Optimization successful
+E_elec= -1877.17903408
+Thermal_corr_Gibbs= 0.392163
+Enthalpy= -1876.700885
+Gibbs_free= -1876.786871
+Lowest_frequency= 20.2116
+*** Analysis complete ***

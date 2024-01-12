@@ -1,0 +1,17 @@
+  ##  TMS_PyridineSCRF_NMR.log  ##  
+ - FROM INPUT: - 
+requested: NMR
+functional/basisset: b3lyp gen
+ - RESULTS: - 
+point_group = TD
+Single point calculation successful
+E_elec= -449.326579258
+NMR calculations successful
+Absolute Si shift= 329.8622
+J-coupling output:
+requested atoms: 1 6 15
+J(1,6) = -0.454563D+02 Hz
+J(1,15) = 0.536938D+01 Hz
+J(6,15) = 0.203959D+00 Hz
+end of J-coupling output
+*** Analysis complete ***
