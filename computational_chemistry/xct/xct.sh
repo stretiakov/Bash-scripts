@@ -153,16 +153,12 @@ if [ ${checknmr} == 1 ]; then
 		for item in ${J_list[@]}; do
 			atom_1=$( echo $item | cut -d ":" -f1 )
 			col=$(( $atom_1 - 1 ))
-
 			atom_2=$( echo $item | cut -d ":" -f2 )
 			lin=$(( $atom_2 - 1 ))
-
-			echo -n "J($atom_1,$atom_2) = "
-			
+			echo -n "J($atom_1,$atom_2) = "			
 			declare -n nameref="line_$lin"
 			echo "${nameref[$col]} Hz"
-
-	      done	      
+		done	      
 
 echo "end of J-coupling output"
 rm *.tmpjdata
