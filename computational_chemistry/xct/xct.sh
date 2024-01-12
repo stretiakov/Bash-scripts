@@ -122,6 +122,7 @@ if [ ${checknmr} == 1 ]; then
 		done	
 
 		# merging all inverted subtables into one
+  		# declaring an empty file first
 		echo -n > inv_restored_table.tmpjdata
 		for (( i = 0; i <= $(( $n_index_lines - 1 )); i++ )); do
 			paste -d ' ' inv_restored_table.tmpjdata table_sect_$i.tmpjdata > temp.tmpjdata
