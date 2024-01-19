@@ -69,9 +69,23 @@ extracted_data() {
 
 	# take a .csv and exctract date and shift arrays from it
 	loc_lines=$(grep -i -n "$location" ${!filename} | cut -d ':' -f1)
-	IFS=$'\n' read -r -d '' -a loc_arr <<< "$loc_lines"
+	IFS=$'\n' read -r -d '' -a loc_arr0 <<< "$loc_lines"
 	name_lines=$(grep -i -n "$team_member" ${!filename} | cut -d ':' -f1)
 	IFS=$'\n' read -r -d '' -a name_arr <<< "$name_lines"
+
+        # making sure that every element in ${name_arr} corresponds to an element in ${loc_arr} (they must be not more than 12 lines apart)
+        # in onther words, accounting for the months in the timetable when $team_member was not employed yet
+        declare -a loc_arr
+	# iteration though indices of the array
+        for i in ${!name_arr[@]}; do
+        len_loc_arr0=${#loc_arr0[@]}
+                for (( j=$i; j <= $(( len_loc_arr0 - 1 )); j++ )); do
+                        if (( ${name_arr[$i]}-${loc_arr0[$j]} > 0 )) && (( ${name_arr[$i]}-${loc_arr0[$j]} <= 12 ))
+                        then
+                                loc_arr+=(${loc_arr0[$j]})
+                        fi
+                done
+        done
 
 	# the extraction function is anchored on $location (case-insensitive) in the head of every table
 	# if it is not higher than 12 lines away from the team member's name,
